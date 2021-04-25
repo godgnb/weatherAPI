@@ -1,6 +1,7 @@
 $(document).ready(function() {
 	buttonEvent();
 	
+//	setGrid();
 	getWeatherInfo();
 });
 
@@ -8,6 +9,28 @@ function buttonEvent() {
 	
 }
 
+function setGrid() {
+	const Grid = new tui.Grid;
+	let el = $('#currentGrid');
+	const currentGrid = new Grid({
+		el: el,
+		columns: [
+			{
+				header: '번호',
+				name: 'num',
+				align: 'center'
+			},
+			{
+				header: '지역',
+				name: 'location'
+			}
+		]
+	});
+	
+	currentGrid.resetData(newData);
+	
+	Grid.applyTheme('striped');
+}
 //weatherAPI 이용해서 날씨정보 가져오기
 function getWeatherInfo() {
 	const key = "xZFQ%2FugPEluUDWNmYfJqVlKf9JGhVHzp%2BMDgsnqGR95l2VJejxMTkj06vrErBZfEZnt84ybQVuFKToMaVBJkvw%3D%3D";
@@ -29,5 +52,9 @@ function getWeatherInfo() {
 
 //api로 가져온 데이터 화면에 매핑
 function setWeatherInfo(data) {
-	
+	$.each($(data).find('location'), function() {
+		const cityName = $(this).find('city').text();
+		
+		
+	});
 }

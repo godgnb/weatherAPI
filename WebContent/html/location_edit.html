@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <title>날씨</title>
+<link rel="stylesheet" href="https://uicdn.toast.com/grid/latest/tui-grid.css" />
+<script src="https://uicdn.toast.com/grid/latest/tui-grid.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="../js/location_edit.js"></script>
+<style>
+	.inner table {
+		border: 1px solid black;
+	}
+</style>
 </head>
 <body>
 	<div class="container">
@@ -25,8 +32,14 @@
 				<button>저장</button>
 				<button>삭제</button>
 			</div>
-			<div class="inner">
-				<select></select>
+			<div class="inner" id="currentGrid">
+				<!-- <table>
+					<tbody>
+						<tr>
+							<th>지역</th>
+						</tr>
+					</tbody>
+				</table> -->
 			</div>
 			
 			<div class="titleArea">
